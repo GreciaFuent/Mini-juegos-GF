@@ -1,0 +1,103 @@
+.principal {
+    display: flex;
+    flex-direction: column;
+}
+
+.principal .return {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 3rem;
+    width: 5rem;
+    margin: 2rem 1rem;
+    font-size: 45px;
+    border: none;
+    background-color: transparent;
+}
+
+.principal .h1_ppt {
+    width: 100%;
+    margin: 1rem 0 2rem;
+    font-size: 50px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.principal .section_contenedores {
+    display: flex;
+    justify-content: space-around;
+    height: 75vh;
+    width: 100%;
+}
+
+.principal .section_contenedores div {
+    height: 63vh;
+    width: 30%;
+    background-color: #ccc;
+    padding: 1rem;
+    border-radius: 15px;
+    margin: 1rem 0;
+}
+
+.principal .section_contenedores .marcador {
+    height: 2.7rem;
+    width: 4.5rem;
+    font-size: 2.3rem;
+    font-weight: 400;
+    text-align: center;
+    background-color: darkorange;
+    border-radius: 10px;
+}
+
+.principal .section_contenedores h2{
+    margin: 1rem 0;
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.principal .section_contenedores .tarjetas{
+    height: 70%;
+    width: 100%;
+    padding: 0;
+}
+
+.principal .section_contenedores .tarjetas ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding-top: 1rem;
+    cursor: pointer;
+}
+
+.principal .section_contenedores .tarjetas ul li:first-child {
+    background-image: url("../imagenes/imgTijera.jpeg");
+    background-position: 50%;
+    background-size: cover;
+}
+
+.principal .section_contenedores .tarjetas ul li:nth-child(2) {
+    background-image: url("../imagenes/imgPapel.jpeg");
+    background-position: 50%;
+    background-size: cover;
+}
+
+.principal .section_contenedores .tarjetas ul li:last-child {
+    background-image: url("../imagenes/imgPiedra.jpeg");
+    background-position: 50%;
+    background-size: cover;
+}
+
+.principal .section_contenedores .tarjetas ul li {
+    height: 12rem;
+    width: 8.3rem;
+    border-radius: 10px;
+    background-color: antiquewhite;
+}
+
+.principal .section_contenedores .tarjetas h4 {
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 1.5rem;
+    text-align: center;
+}
