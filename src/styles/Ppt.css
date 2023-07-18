@@ -23,6 +23,99 @@
     text-align: center;
 }
 
+.principal .marcador {
+    position: absolute;
+    top: 5rem;
+    right: 15px;
+    height: 6rem;
+    width: 15rem;
+    border-radius: 15px;
+    background-color: darkorange;
+}
+
+.principal .marcador ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0.5rem;
+}
+
+.principal .marcador .ul_nombre li{
+    text-align: center;
+    width: 48%;
+    font-size: 25px;
+}
+
+.principal .marcador .ul_punteo li{
+    text-align: center;
+    width: 48%;
+    font-size: 40px;
+}
+
+.principal .texto_h3 {
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 35px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.principal .flecha {
+    font-size: 4rem;
+    margin-top: 2rem;
+    animation: flecha 1s alternate-reverse infinite ;
+}
+
+.principal .tarjetas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 55vh;
+    width: 100%;
+
+}
+
+
+.principal .tarjetas .ul_opciones {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90%;
+    width: 55%;
+    list-style: none;
+    padding-top: 1rem;
+    cursor: pointer;
+}
+
+.principal .tarjetas .ul_opciones li {
+    height: 20rem;
+    width: 14rem;
+    border-radius: 10px;
+    background-color: antiquewhite;
+}
+
+.principal .tarjetas .ul_opciones li:first-child {
+    background-image: url("../imagenes/imgPiedra.jpeg");
+    background-position: 50%;
+    background-size: cover;
+}
+
+.principal .tarjetas .ul_opciones li:nth-child(2) {
+    background-image: url("../imagenes/imgPapel.jpeg");
+    background-position: 50%;
+    background-size: cover;
+}
+
+.principal .tarjetas .ul_opciones li:last-child {
+    background-image: url("../imagenes/imgTijera.jpeg");
+    background-position: 50%;
+    background-size: cover;
+}
+
+
+
+/* 
 .principal .section_contenedores {
     display: flex;
     justify-content: space-around;
@@ -100,4 +193,14 @@
     font-weight: 400;
     margin-top: 1.5rem;
     text-align: center;
+} */
+
+
+@keyframes flecha {
+    from {
+        transform: translateY(-30px);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
