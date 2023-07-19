@@ -2,20 +2,23 @@ import "../styles/Ppt.css"
 
 function PPT() {
 
+    
 
     // El codigo para obtener el numero random 
     const contra = ()=>{
         let num_random = Math.floor(Math.random() * 3)
 
         if (num_random == 0) {
-            return ('La computadora juega con tijera')
+            console.log('La computadora juega con piedra')
         }
         else if (num_random == 1) {
-            return ('La computadora juega con piedra')
+            console.log('La computadora juega con papel')
         }
         else if (num_random == 2) {
-            return ('La computadora juega con papel')
+            console.log('La computadora juega con tijera')
         }
+
+        return num_random
     }
 
 
@@ -24,65 +27,82 @@ function PPT() {
     let contador_tijera = 0
     let contador_piedra = 0
     let contador_papel = 0
+    let opcion = ""
+
+    const juego = (contra)=> {
+        // Contadores 
+        let contador_compu = 0
+        let contador_jugador = 0
+
+        // define la opcion de jugador
+        if (contador_papel == 1) {
+            opcion = "papel"
+        }
+        else if (contador_piedra == 1) {
+            opcion = "piedra"
+        }
+        else if (contador_tijera == 1) {
+            opcion = "tijera"
+        }
+
+        // el enfrentamiento
+        if (opcion == "papel" & contra == 0) {
+            contador_jugador += 1
+            console.log("tu ganas")
+            
+        }
+        else if (opcion == "papel" & contra == 1) {
+            console.log("nadie gana")
+        }
+        else if (opcion == "papel" & contra == 2) {
+            contador_compu += 1
+            console.log("la compu gana")
+        }
+        else if(opcion == "piedra" & contra == 0) {
+            console.log("nadie gana")
+        }
+        else if (opcion == "piedra" & contra == 1) {
+            contador_compu += 1
+            console.log("la compu gana")
+        }
+        else if (opcion == "piedra" & contra == 2) {
+            contador_jugador += 1
+            console.log("tu ganas")
+        }
+        else if(opcion == "tijera" & contra == 0) {
+            contador_compu += 1
+            console.log("la compu gana")
+        }
+        else if (opcion == "tijera" & contra == 1) {
+            contador_jugador += 1
+            console.log("tu ganas")
+        }
+        else if (opcion == "tijera" & contra == 2) {
+            console.log("nadie gana")
+        }
+    }
+
 
     const sumar_contador_tijera = ()=> {
         contador_tijera += 1
-        console.log(contador_tijera)
+        juego(contra())
+        contador_tijera = 0
     }
 
     const sumar_contador_piedra = ()=> {
         contador_piedra += 1
-        console.log(contador_piedra)
-    }
+        juego(contra())
+        contador_piedra = 0
+    }   
+
     const sumar_contador_papel = ()=> {
         contador_papel += 1
-        console.log(contador_papel)
-        console.log(`Al final los contadores quedaron de esta manera Contador papel:${contador_papel}, Contador tijera: ${contador_tijera}, Contador piedra; ${contador_piedra}`)
-   
+        juego(contra())
+        contador_papel = 0
     }
-
 
     
 
-
-
-
-
-
-
-    // let juego = ""
-
-    // const obtenerClassNamePiedra = ()=> {
-    //     const clase = document.querySelector(".piedra").className
-
-    //     juego = clase
-
-    //     console.log(juego)
-
-    //    return juego
-    // }
-
-    // const obtenerClassNamePapel = ()=> {
-    //     const clase = document.querySelector(".papel").className
-
-    //     juego = clase
-
-    //     console.log(juego)
-
-    //    return juego
-    // }
-
-    // const obtenerClassNameTijera = ()=> {
-    //     const clase = document.querySelector(".tijera").className
-
-    //     juego = clase
-
-    //     console.log(juego)
-
-    //    return juego
-    // }
-
-    // console.log(juego)
 
     return (
         <div className="principal">
@@ -108,33 +128,6 @@ function PPT() {
                         <li className="li tijera" onClick={sumar_contador_tijera}>tijera</li>
                     </ul>
                 </div>
-
-            {/* <section className="section_contenedor">
-            <div className="div_compu">
-                <h3 className="marcador">08</h3>
-                <h2>Computadora</h2>
-                <div className="tarjetas">
-                    <ul>
-                        <li className="tijera" onClick={si}></li>
-                        <li className="papel" onClick={si}></li>
-                        <li className="piedra" onClick={si}></li>
-                    </ul>
-                    <h4>Perdedor</h4>
-                </div>
-            </div>
-            <div className="div_jugador">
-                <h3 className="marcador">08</h3>
-                <h2>Computadora</h2>
-                <div className="tarjetas">
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                    <h4>Ganador</h4>
-                </div>
-            </div>
-            </section> */}
         </div>
     )
 }
