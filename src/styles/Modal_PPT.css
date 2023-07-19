@@ -1,0 +1,166 @@
+.modal_tarjetas {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #a3a1a1;
+    transition: all .5s;
+}
+
+.modal_tarjetas .ganador {
+    font-size: 56px;
+    font-weight: 300;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.modal_tarjetas .perdedor {
+    font-size: 56px;
+    font-weight: 300;
+    margin-top: 1rem;
+    text-align: center;
+    color: red;
+}
+
+.modal_tarjetas .empate {
+    font-size: 56px;
+    font-weight: 300;
+    margin-top: 1rem;
+    text-align: center;
+    color: blue;
+}
+
+.modal_tarjetas .cont_div_modal {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70%;
+}
+
+.modal_tarjetas .cont_div_modal div {
+    height: 73vh;
+    width: 30%;
+}
+
+.modal_tarjetas .cont_div_modal .vs {
+    height: 10rem;
+    width: 10rem;
+    padding: 0;
+    margin: 0;
+}
+
+
+.modal_tarjetas .div_compu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal_tarjetas .div_compu h2{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 300;
+    margin: 1rem 0;
+}
+
+.modal_tarjetas .div_compu .ul_maquina {
+    height: 70%;
+    width: 60%;
+    list-style: none;
+    padding-top: 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: pink;
+}
+
+.modal_tarjetas .div_compu .ul_maquina li {
+    height: 100%;
+    width: 100%;
+    background-color: antiquewhite;
+}
+
+
+.modal_tarjetas .div_compu .ul_maquina .fondo_tijera_compu {
+    background-image: url("../imagenes/imgTijera.jpeg");
+    background-position: 50%;
+    background-size: cover;
+}
+
+.modal_tarjetas .div_compu .ul_maquina .fondo_papel_compu {
+    background-image: url("../imagenes/imgPapel.jpeg");
+    background-position: 50%;
+    background-size: cover;
+}
+
+
+.modal_tarjetas .div_compu .ul_maquina .fondo_piedra_compu {
+    background-image: url("../imagenes/imgPiedra.jpeg");
+    background-position: 50%;
+    background-size: cover;
+}
+
+
+/* Estilos del jugador */
+
+.modal_tarjetas .div_jugador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal_tarjetas .div_jugador h2{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 300;
+    margin: 1rem 0;
+}
+
+.modal_tarjetas .div_jugador .ul_jugador {
+    height: 70%;
+    width: 60%;
+    list-style: none;
+    padding-top: 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: pink;
+}
+
+.modal_tarjetas .div_jugador .ul_jugador li {
+    height: 100%;
+    width: 100%;
+    background-color: antiquewhite;
+}
+
+.modal_tarjetas .div_jugador .ul_jugador .fondo_tijera {
+    background-image: url("../imagenes/imgTijera.jpeg");
+    background-position: 50%;
+    background-size: cover;
+}
+
+.modal_tarjetas .div_jugador .ul_jugador .fondo_papel {
+    background-image: url("../imagenes/imgPapel.jpeg");
+    background-position: 50%;
+    background-size: cover;
+}
+
+
+.modal_tarjetas .div_jugador .ul_jugador .fondo_piedra {
+    background-image: url("../imagenes/imgPiedra.jpeg");
+    background-position: 50%;
+    background-size: cover;
+}
+
+
+.modal_tarjetas .btn_cerrar_modal {
+    float: right;
+    height: 3.5rem;
+    width: 7rem;
+    margin: 1.5rem 1.5rem 3rem 0;
+    font-size: 25px;
+    border: 1px solid #000;
+    color: #000;
+    background-color: transparent;
+}

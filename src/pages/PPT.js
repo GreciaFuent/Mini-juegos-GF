@@ -1,8 +1,81 @@
+import Modal_PPT from "../components/Modal_PPT"
 import "../styles/Ppt.css"
 
 function PPT() {
 
-    
+// TODO EL CODIGO QUE SE UTILIZO PARA EL MODAL
+
+    // selecciona la img de de la tarjeta del modal del jugador
+    const fondo_tijera = ()=> {
+        const li_jugador = document.querySelector(".li_jugador")
+
+        li_jugador.classList.replace("cambiar","fondo_tijera")
+    }
+
+    const fondo_piedra = ()=> {
+        const li_jugador = document.querySelector(".li_jugador")
+
+        li_jugador.classList.replace("cambiar","fondo_piedra")
+    }
+
+    const fondo_papel = ()=> {
+        const li_jugador = document.querySelector(".li_jugador")
+
+        li_jugador.classList.replace("cambiar","fondo_papel")
+    }
+
+
+    // selecciona la img de de la tarjeta del modal de la maquina
+    const fondo_tijera_compu = ()=> {
+        const li_maquina = document.querySelector(".li_maquina")
+
+        li_maquina.classList.replace("change","fondo_tijera_compu")
+    }
+
+    const fondo_piedra_compu = ()=> {
+        const li_maquina = document.querySelector(".li_maquina")
+
+        li_maquina.classList.replace("change","fondo_piedra_compu")
+    }
+
+    const fondo_papel_compu = ()=> {
+        const li_maquina = document.querySelector(".li_maquina")
+
+        li_maquina.classList.replace("change","fondo_papel_compu")
+    }
+
+
+    // codigo para abrir el modal
+    const abrir_modal = ()=> {
+        const modal = document.querySelector(".modal_tarjetas")
+
+        modal.style.display = "block"
+    }
+
+    // codigo para cambiar el texto del modal
+    const cambiar_clase_perdedor = ()=> {
+        const h1_modal = document.querySelector(".ganador")
+
+        h1_modal.classList.replace("ganador","perdedor")
+
+        const h2_modal_modificado = document.querySelector(".perdedor")
+
+        h2_modal_modificado.innerHTML = "Perdedor"
+    }
+
+
+// CODIGO DE LA PAGE PPT
+    const cambiar_clase_empate = ()=> {
+        const h1_modal = document.querySelector(".ganador")
+
+        h1_modal.classList.replace("ganador","empate")
+
+        const h2_modal_modificado = document.querySelector(".empate")
+
+        h2_modal_modificado.innerHTML = "Es un empate"
+    }
+
+
 
     // El codigo para obtener el numero random 
     const contra = ()=>{
@@ -10,33 +83,51 @@ function PPT() {
 
         if (num_random == 0) {
             console.log('La computadora juega con piedra')
+            fondo_piedra_compu()
         }
         else if (num_random == 1) {
             console.log('La computadora juega con papel')
+            fondo_papel_compu()
         }
         else if (num_random == 2) {
             console.log('La computadora juega con tijera')
+            fondo_tijera_compu()
         }
 
         return num_random
     }
 
+    // obtener el contador del marcador
+    let contador_compu = 0
+    let contador_jugador = 0
+
+    const marcador_maquina = ()=> {
+        const contador_maquina = document.querySelector(".contador_maquina")
+
+        contador_maquina.innerHTML = contador_compu
+    }
+
+    const marcador_jugador = ()=> {
+        const contador_jugador1 = document.querySelector(".contador_jugador1")
+
+        contador_jugador1.innerHTML = contador_jugador
+    }
 
     // El codigo para obtener la opcion del jugador
-
     let contador_tijera = 0
     let contador_piedra = 0
     let contador_papel = 0
     let opcion = ""
+    
+
 
     const juego = (contra)=> {
-        // Contadores 
-        let contador_compu = 0
-        let contador_jugador = 0
+        abrir_modal()
 
         // define la opcion de jugador
         if (contador_papel == 1) {
             opcion = "papel"
+            
         }
         else if (contador_piedra == 1) {
             opcion = "piedra"
@@ -53,17 +144,21 @@ function PPT() {
         }
         else if (opcion == "papel" & contra == 1) {
             console.log("nadie gana")
+            cambiar_clase_empate()
         }
         else if (opcion == "papel" & contra == 2) {
             contador_compu += 1
             console.log("la compu gana")
+            cambiar_clase_perdedor()
         }
         else if(opcion == "piedra" & contra == 0) {
             console.log("nadie gana")
+            cambiar_clase_empate()
         }
         else if (opcion == "piedra" & contra == 1) {
             contador_compu += 1
             console.log("la compu gana")
+            cambiar_clase_perdedor()
         }
         else if (opcion == "piedra" & contra == 2) {
             contador_jugador += 1
@@ -72,6 +167,7 @@ function PPT() {
         else if(opcion == "tijera" & contra == 0) {
             contador_compu += 1
             console.log("la compu gana")
+            cambiar_clase_perdedor()
         }
         else if (opcion == "tijera" & contra == 1) {
             contador_jugador += 1
@@ -79,25 +175,32 @@ function PPT() {
         }
         else if (opcion == "tijera" & contra == 2) {
             console.log("nadie gana")
+            cambiar_clase_empate()
         }
+
+        marcador_maquina()
+        marcador_jugador()
     }
 
 
     const sumar_contador_tijera = ()=> {
         contador_tijera += 1
         juego(contra())
+        fondo_tijera()
         contador_tijera = 0
     }
 
     const sumar_contador_piedra = ()=> {
         contador_piedra += 1
         juego(contra())
+        fondo_piedra()
         contador_piedra = 0
     }   
 
     const sumar_contador_papel = ()=> {
         contador_papel += 1
         juego(contra())
+        fondo_papel()
         contador_papel = 0
     }
 
@@ -114,18 +217,18 @@ function PPT() {
                     <li>Tu</li>
                 </ul>
                 <ul className="ul_punteo"> 
-                    <li>01</li>
-                    <li>05</li>
+                    <li className="contador_maquina">0</li>
+                    <li className="contador_jugador1">0</li>
                 </ul>
             </div>
 
+            <Modal_PPT/>
             <h3 className="texto_h3">Escoje con que tarjeta deseas jugar</h3>
-            <svg className="flecha" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.646 9.646a.5.5 0 01.708 0L8 12.293l2.646-2.647a.5.5 0 01.708.708l-3 3a.5.5 0 01-.708 0l-3-3a.5.5 0 010-.708z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M8 2.5a.5.5 0 01.5.5v9a.5.5 0 01-1 0V3a.5.5 0 01.5-.5z" clip-rule="evenodd"></path></svg>
             <div className="tarjetas">
                     <ul className="ul_opciones">
-                        <li className="li piedra" onClick={sumar_contador_piedra}>piedra</li>
-                        <li className="li papel" onClick={sumar_contador_papel}>papel</li>
-                        <li className="li tijera" onClick={sumar_contador_tijera}>tijera</li>
+                        <li className="li piedra" onClick={sumar_contador_piedra}></li>
+                        <li className="li papel" onClick={sumar_contador_papel}></li>
+                        <li className="li tijera" onClick={sumar_contador_tijera}></li>
                     </ul>
                 </div>
         </div>
