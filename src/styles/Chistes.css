@@ -1,0 +1,23 @@
+.principal_chistes {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    align-items: center;
+}
+
+
+.principal_chistes .h1_chistes {
+    margin: 1.5rem;
+}
+
+.principal_chistes .btn_generar_chiste {
+    height: 5rem;
+    width: 15rem;
+    margin: 2rem 0;
+    font-size: 25px;
+    border-radius: 15px;
+    border: none;
+    color: #ddd;
+    background-color: #FC6C4C;
+}
