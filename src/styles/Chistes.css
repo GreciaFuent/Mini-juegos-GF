@@ -6,6 +6,17 @@
     align-items: center;
 }
 
+.principal_chistes .return {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 3rem;
+    width: 5rem;
+    margin: 2rem 1rem;
+    font-size: 45px;
+    border: none;
+    background-color: transparent;
+}
 
 .principal_chistes .h1_chistes {
     margin: 1.5rem;
