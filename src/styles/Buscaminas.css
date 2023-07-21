@@ -1,0 +1,58 @@
+.principal_buscaminas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.principal_buscaminas .return {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 3rem;
+    width: 5rem;
+    margin: 2rem 1rem;
+    font-size: 45px;
+    border: none;
+    background-color: transparent;
+}
+
+.principal_buscaminas .titulo_bucaminas {
+    margin: 2rem;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.principal_buscaminas .grid_container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 10rem 10rem 10rem 10rem;
+    height: 67vh;
+    margin-top: 2rem;
+    border: 3px solid #080a0f;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.principal_buscaminas .grid_container .grid_item {
+    border: 1px solid #080a0f;
+    padding: .5rem;
+    background-color: rgb(59, 59, 59);
+    cursor: pointer;
+}
+
+.principal_buscaminas .grid_container .grid_item.mina {
+    border: 1px solid #080a0f;
+    padding: .5rem;
+    background-color: red;
+    cursor: pointer;
+}
+
+.principal_buscaminas .grid_container .grid_item.salvado {
+    border: 1px solid #080a0f;
+    padding: .5rem;
+    background-color: #8D99C0;
+    cursor: pointer;
+}
+
